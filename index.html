@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centro Universitario de Sonora - CUSON - Suicidología - Egresados</title>
+<style>
+:root{--p:#0d5c5c;--bg:#f6f7f9;--bd:#e5e8ef;--tx:#1a2332;--mu:#5b6b85}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--tx)}
+.h{background:#fff;border-bottom:1px solid var(--bd)}.hi{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;gap:14px;align-items:center}
+.logo{width:52px;height:52px;border:1px solid var(--bd);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:5px;background:#fff} .logo img{width:100%;height:100%;object-fit:contain}
+.intro{max-width:1080px;margin:0 auto;padding:12px 20px 6px} .ic{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:16px 18px;display:flex;gap:14px} .ic.collapsed p,.ic.collapsed .priv{display:none} .ic.collapsed{padding:10px 14px} .ib{min-width:132px;background:#1a365d;color:#fff;border-radius:10px;padding:10px 12px} .bar{height:5px;background:#e2e8f0;border-radius:999px;overflow:hidden} .bar div{height:100%;background:var(--p);width:20%;transition:.4s}
+.main{max-width:760px;margin:0 auto;padding:12px 20px 40px} .card{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:22px}
+.s{display:none} .s.active{display:block} .field{margin-bottom:16px} .label{font-size:13.5px;font-weight:600;margin-bottom:6px;display:block} .label.req:after{content:" *";color:#c53030}
+.input{width:100%;padding:11px 12px;border:1px solid var(--bd);border-radius:10px;font-size:14.5px} .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px} .stack{display:grid;gap:8px}
+.opt{display:flex;gap:8px;padding:11px 12px;border:1px solid var(--bd);border-radius:10px;background:#fff;cursor:pointer;font-size:14px} .opt:has(input:checked){border-color:var(--p);background:color-mix(in srgb,var(--p) 6%, white)}
+.sticky{position:sticky;top:0;z-index:5;background:rgba(246,247,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--bd);padding:6px 0} .nav{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;gap:6px;flex-wrap:wrap} .nav b{padding:5px 10px;border-radius:999px;border:1px solid var(--bd);background:#fff;font-size:11px;color:var(--mu)} .nav b.on{background:var(--p);color:#fff} .nav b.done{background:#eef2ff;color:var(--p)}
+.foot{display:flex;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid var(--bd)} .btn{padding:11px 18px;border-radius:10px;border:none;font-weight:700;cursor:pointer} .btn-p{background:var(--p);color:#fff} .btn-s{background:#fff;border:1px solid var(--bd)}
+.err{color:#c53030;font-size:12px;margin-top:5px;display:none} .err.show{display:block}
+#ty{display:none;text-align:center;padding:30px}
+.likert{display:grid;grid-template-columns:1fr 38px 38px 38px 38px 38px;gap:4px;align-items:center;padding:8px 10px;border:1px solid var(--bd);border-radius:10px;margin-bottom:6px;background:#fff}
+.likert.head{background:#f1f5f9;font-weight:700;font-size:11px}
+@media(max-width:640px){.likert{grid-template-columns:1fr 32px 32px 32px 32px 32px;font-size:12px}}
+</style></head><body>
+<div class="h"><div class="hi"><div class="logo"><img src="data:image/jpeg;base64,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"></div><div><div style="font-weight:800;font-size:15px">Centro Universitario de Sonora - CUSON</div><div style="font-size:11px;color:var(--mu)">Encuesta de satisfacción · Taller de Suicidología · 20h · Confidencial</div></div></div></div>
+<div class="intro"><div class="ic" id="ic"><div style="flex:1"><h2 style="margin:0 0 6px 0;font-size:16px">Encuesta de satisfacción: Taller de Suicidología - Prevención, evaluación e intervención</h2><p style="margin:0;font-size:13.5px;color:var(--mu);line-height:1.7;white-space:pre-line">Programas de educación continua
+Encuesta de satisfacción Taller de Suicidología: Prevención, evaluación e intervención ante la conducta suicida · En línea · 20 horas · viernes de 16:00 a 20:00 h · Ponente: Luis Fernando Carvajal Dávila</p><div class="priv" style="margin-top:8px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;font-size:11.5px">Aviso: Sus datos personales serán tratados de manera confidencial y utilizados exclusivamente para fines estadísticos, de seguimiento institucional y comunicación de la universidad.</div><button onclick="document.getElementById('ic').classList.toggle('collapsed')" style="margin-top:8px;background:none;border:1px solid #cbd5e1;border-radius:999px;padding:3px 10px;font-size:11px">Ocultar / Ver introducción</button></div><div class="ib"><div style="font-size:9px;opacity:.7">PROGRESO</div><div style="font-weight:800">Paso <span id="cur">1</span> de 5</div><div class="bar" style="margin-top:8px;background:rgba(255,255,255,.2)"><div id="bar"></div></div><div style="font-size:10px;margin-top:4px" id="pct">20%</div></div></div></div>
+<div class="sticky"><div class="nav"><b class="on" id="n1">1 Datos</b><b id="n2">2 Atención</b><b id="n3">3 Curso</b><b id="n4">4 Docente</b><b id="n5">5 Valoración</b></div></div>
+<div class="main"><form id="f" class="card" novalidate>
+
+<div class="s active" data-s="1"><h3 style="margin:0 0 12px 0">1. Datos de contacto</h3>
+<div class="field"><label class="label req">Nombre completo</label><input name="nombre" required class="input"></div>
+<div class="grid-2"><div class="field"><label class="label req">Correo</label><input name="email" type="email" required class="input"></div><div class="field"><label class="label">WhatsApp (con clave lada)</label><input name="telefono" class="input"></div></div>
+<div class="field"><label class="label">Fecha</label><input name="fecha_curso" type="date" class="input"></div>
+<div class="err" id="e1">Completa nombre y correo.</div></div>
+
+<div class="s" data-s="2"><h3 style="margin:0 0 12px 0">2. Atención por parte del personal</h3>
+<div class="likert head"><div>Afirmación</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div></div>
+<div class="likert" data-req="atencion"><div style="font-size:13px">1. El personal me brindó información clara y oportuna antes del inicio del curso.</div>
+<label><input type="radio" name="p1" value="1" required></label>
+<label><input type="radio" name="p1" value="2"></label>
+<label><input type="radio" name="p1" value="3"></label>
+<label><input type="radio" name="p1" value="4"></label>
+<label><input type="radio" name="p1" value="5"></label></div>
+<div class="likert" data-req="atencion"><div style="font-size:13px">2. El personal atendió mis dudas con amabilidad y rapidez.</div>
+<label><input type="radio" name="p2" value="1" required></label>
+<label><input type="radio" name="p2" value="2"></label>
+<label><input type="radio" name="p2" value="3"></label>
+<label><input type="radio" name="p2" value="4"></label>
+<label><input type="radio" name="p2" value="5"></label></div>
+<div class="likert" data-req="atencion"><div style="font-size:13px">3. El proceso de inscripción y pago fue sencillo.</div>
+<label><input type="radio" name="p3" value="1" required></label>
+<label><input type="radio" name="p3" value="2"></label>
+<label><input type="radio" name="p3" value="3"></label>
+<label><input type="radio" name="p3" value="4"></label>
+<label><input type="radio" name="p3" value="5"></label></div>
+<div class="likert" data-req="atencion"><div style="font-size:13px">4. Los contenidos correspondieron a los objetivos y al temario anunciados.</div>
+<label><input type="radio" name="p4" value="1" required></label>
+<label><input type="radio" name="p4" value="2"></label>
+<label><input type="radio" name="p4" value="3"></label>
+<label><input type="radio" name="p4" value="4"></label>
+<label><input type="radio" name="p4" value="5"></label></div><div class="err" id="e2">Responde las 4 afirmaciones.</div></div>
+<div class="s" data-s="3"><h3 style="margin:0 0 12px 0">3. Precio, horario, días y duración</h3>
+<div class="likert head"><div>Afirmación</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div></div>
+<div class="likert" data-req="curso"><div style="font-size:13px">5. El precio del curso es adecuado en relación con su contenido y duración.</div>
+<label><input type="radio" name="p5" value="1" required></label>
+<label><input type="radio" name="p5" value="2"></label>
+<label><input type="radio" name="p5" value="3"></label>
+<label><input type="radio" name="p5" value="4"></label>
+<label><input type="radio" name="p5" value="5"></label></div>
+<div class="likert" data-req="curso"><div style="font-size:13px">6. El horario del curso (de 16:00 a 20:00 h) me resultó conveniente.</div>
+<label><input type="radio" name="p6" value="1" required></label>
+<label><input type="radio" name="p6" value="2"></label>
+<label><input type="radio" name="p6" value="3"></label>
+<label><input type="radio" name="p6" value="4"></label>
+<label><input type="radio" name="p6" value="5"></label></div>
+<div class="likert" data-req="curso"><div style="font-size:13px">7. El día en que se imparte el curso (viernes) me resultó conveniente.</div>
+<label><input type="radio" name="p7" value="1" required></label>
+<label><input type="radio" name="p7" value="2"></label>
+<label><input type="radio" name="p7" value="3"></label>
+<label><input type="radio" name="p7" value="4"></label>
+<label><input type="radio" name="p7" value="5"></label></div>
+<div class="likert" data-req="curso"><div style="font-size:13px">8. La duración total del curso (20 horas) fue suficiente para cubrir el temario.</div>
+<label><input type="radio" name="p8" value="1" required></label>
+<label><input type="radio" name="p8" value="2"></label>
+<label><input type="radio" name="p8" value="3"></label>
+<label><input type="radio" name="p8" value="4"></label>
+<label><input type="radio" name="p8" value="5"></label></div><div class="err" id="e3">Responde todas las afirmaciones.</div></div>
+<div class="s" data-s="4"><h3 style="margin:0 0 12px 0">4. Desempeño docente y dominio</h3>
+<div class="likert head"><div>Afirmación</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">9. El ponente expuso los temas con claridad y orden.</div>
+<label><input type="radio" name="p9" value="1" required></label>
+<label><input type="radio" name="p9" value="2"></label>
+<label><input type="radio" name="p9" value="3"></label>
+<label><input type="radio" name="p9" value="4"></label>
+<label><input type="radio" name="p9" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">10. El ponente fomentó la participación y resolvió las dudas del grupo.</div>
+<label><input type="radio" name="p10" value="1" required></label>
+<label><input type="radio" name="p10" value="2"></label>
+<label><input type="radio" name="p10" value="3"></label>
+<label><input type="radio" name="p10" value="4"></label>
+<label><input type="radio" name="p10" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">11. El ponente administró adecuadamente el tiempo de cada sesión.</div>
+<label><input type="radio" name="p11" value="1" required></label>
+<label><input type="radio" name="p11" value="2"></label>
+<label><input type="radio" name="p11" value="3"></label>
+<label><input type="radio" name="p11" value="4"></label>
+<label><input type="radio" name="p11" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">12. Los materiales y recursos de apoyo fueron útiles.</div>
+<label><input type="radio" name="p12" value="1" required></label>
+<label><input type="radio" name="p12" value="2"></label>
+<label><input type="radio" name="p12" value="3"></label>
+<label><input type="radio" name="p12" value="4"></label>
+<label><input type="radio" name="p12" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">13. El tema se abordó con sensibilidad y se cuidó el bienestar emocional de los participantes.</div>
+<label><input type="radio" name="p13" value="1" required></label>
+<label><input type="radio" name="p13" value="2"></label>
+<label><input type="radio" name="p13" value="3"></label>
+<label><input type="radio" name="p13" value="4"></label>
+<label><input type="radio" name="p13" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">14. El docente demostró dominio de los temas del curso.</div>
+<label><input type="radio" name="p14" value="1" required></label>
+<label><input type="radio" name="p14" value="2"></label>
+<label><input type="radio" name="p14" value="3"></label>
+<label><input type="radio" name="p14" value="4"></label>
+<label><input type="radio" name="p14" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">15. El docente respondió con solvencia las preguntas y apoyó sus explicaciones con casos o evidencia actualizada.</div>
+<label><input type="radio" name="p15" value="1" required></label>
+<label><input type="radio" name="p15" value="2"></label>
+<label><input type="radio" name="p15" value="3"></label>
+<label><input type="radio" name="p15" value="4"></label>
+<label><input type="radio" name="p15" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">16. Lo aprendido es aplicable en mi práctica profesional.</div>
+<label><input type="radio" name="p16" value="1" required></label>
+<label><input type="radio" name="p16" value="2"></label>
+<label><input type="radio" name="p16" value="3"></label>
+<label><input type="radio" name="p16" value="4"></label>
+<label><input type="radio" name="p16" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">17. En general, el curso cumplió mis expectativas.</div>
+<label><input type="radio" name="p17" value="1" required></label>
+<label><input type="radio" name="p17" value="2"></label>
+<label><input type="radio" name="p17" value="3"></label>
+<label><input type="radio" name="p17" value="4"></label>
+<label><input type="radio" name="p17" value="5"></label></div>
+<div class="likert" data-req="docente"><div style="font-size:13px">18. Recomendaría este curso a otras personas.</div>
+<label><input type="radio" name="p18" value="1" required></label>
+<label><input type="radio" name="p18" value="2"></label>
+<label><input type="radio" name="p18" value="3"></label>
+<label><input type="radio" name="p18" value="4"></label>
+<label><input type="radio" name="p18" value="5"></label></div><div class="err" id="e4">Responde todas.</div></div>
+<div class="s" data-s="5"><h3>5. Valoración general y contacto</h3>
+<div class="field"><label class="label">¿Qué fue lo más valioso del curso para ti?</label><textarea name="valioso" rows="3" class="input"></textarea></div>
+<div class="field"><label class="label">¿Qué aspecto del curso mejorarías?</label><textarea name="mejorar" rows="3" class="input"></textarea></div>
+<div class="field"><label class="label">¿Qué otros temas te gustaría que se ofrecieran en educación continua?</label><textarea name="otros_temas" rows="2" class="input"></textarea></div>
+<div class="field"><label class="label">¿Deseas recibir la oferta de educación continua?</label><div class="stack"><label class="opt"><input type="radio" name="desea_oferta" value="Sí"><span>Sí</span></label><label class="opt"><input type="radio" name="desea_oferta" value="No"><span>No</span></label></div></div>
+<div class="field"><label class="label">¿Por qué medio prefieres recibirla?</label><div class="stack"><label class="opt"><input type="radio" name="medio" value="Correo electrónico"><span>Correo electrónico</span></label><label class="opt"><input type="radio" name="medio" value="WhatsApp"><span>WhatsApp</span></label><label class="opt"><input type="radio" name="medio" value="Ambos"><span>Ambos</span></label></div></div>
+<div class="field"><label class="opt"><input type="checkbox" name="autoriza" value="Sí"><span>Autorizo el uso de mis datos para recibir información conforme al aviso de privacidad.</span></label></div>
+<div class="err" id="e5"></div></div>
+
+<div class="foot"><button type="button" id="prev" class="btn btn-s" style="display:none">← Anterior</button><button type="button" id="next" class="btn btn-p">Siguiente →</button><button type="submit" id="sub" class="btn btn-p" style="display:none">Enviar encuesta</button></div>
+</form>
+<div id="ty"><div style="font-size:32px">✓</div><h2 id="tyt">¡Gracias!</h2><p id="typ"></p><div><span id="pillF" style="background:#f1f5f9;border:1px solid var(--bd);border-radius:999px;padding:4px 10px;font-size:11px"></span> <span id="pillA" style="background:#f1f5f9;border:1px solid var(--bd);border-radius:999px;padding:4px 10px;font-size:11px"></span></div></div>
+</div>
+<script>
+const WEB="https://script.google.com/macros/s/AKfycbyKmcmMqfgyEnO9g584hv0S6Rq5XMj0GCvWde8EqLRvWeUQW1WQ8voiT7KHGRVFwXm6lQ/exec"; const FID="FORM5_Suicidologia"; let cur=1;
+function upd(){const pct=cur/5*100; document.getElementById('bar').style.width=pct+'%'; document.getElementById('pct').textContent=Math.round(pct)+'%'; document.getElementById('cur').textContent=cur; document.querySelectorAll('.nav b').forEach((b,i)=>{b.className=(i+1==cur?'on':(i+1<cur?'done':''))});}
+function show(n){cur=n; document.querySelectorAll('.s').forEach(s=>s.classList.remove('active')); document.querySelector('[data-s="'+n+'"]').classList.add('active'); document.getElementById('prev').style.display=n==1?'none':'inline-block'; document.getElementById('next').style.display=n==5?'none':'inline-block'; document.getElementById('sub').style.display=n!=5?'none':'inline-block'; upd(); window.scrollTo({top:0,behavior:'smooth'});}
+function valid(n){
+ let ok=true;
+ if(n==1){ ok=document.querySelector('[name="nombre"]').value.trim()!='' && document.querySelector('[name="email"]').value.includes('@'); document.getElementById('e1').className=ok?'err':'err show';}
+ if(n==2){ const c=document.querySelectorAll('[data-req="atencion"]'); ok=Array.from(c).every(g=>g.querySelector('input:checked')); document.getElementById('e2').className=ok?'err':'err show';}
+ if(n==3){ const c=document.querySelectorAll('[data-req="curso"]'); ok=Array.from(c).every(g=>g.querySelector('input:checked')); document.getElementById('e3').className=ok?'err':'err show';}
+ if(n==4){ const c=document.querySelectorAll('[data-req="docente"]'); ok=Array.from(c).every(g=>g.querySelector('input:checked')); document.getElementById('e4').className=ok?'err':'err show';}
+ if(n==5){ ok=true; document.getElementById('e5').className='err';}
+ return ok;
+}
+document.getElementById('next').onclick=()=>{ if(valid(cur)) show(cur+1); };
+document.getElementById('prev').onclick=()=>{ if(cur>1) show(cur-1); };
+document.getElementById('f').addEventListener('submit', async (e)=>{
+ e.preventDefault(); if(!valid(cur)) { if(!valid(2)) show(2); else if(!valid(3)) show(3); else if(!valid(4)) show(4); return; }
+ const fd=new FormData(e.target); const o={}; fd.forEach((v,k)=>o[k]=v);
+ o.folio='EGR-'+FID+'-'+new Date().getFullYear()+'-'+Math.random().toString(36).substr(2,4).toUpperCase(); 
+ o.timestamp=new Date().toISOString(); o.form_id=FID; o._sheet_tab='Respuestas_'+FID;
+ o.fecha= new Date().toLocaleDateString('es-MX');
+ const btn=document.getElementById('sub'); btn.textContent='Enviando...'; btn.disabled=true;
+ try{ await fetch(WEB,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(o)}); 
+ document.getElementById('f').style.display='none'; document.querySelector('.sticky').style.display='none'; document.getElementById('ic').style.display='none'; 
+ const ty=document.getElementById('ty'); ty.style.display='block'; 
+ document.getElementById('tyt').textContent='¡Gracias por tu participación, '+(o.nombre.split(' ')[0]||'')+'!'; 
+ document.getElementById('typ').textContent='Tu opinión nos ayuda a mejorar nuestra oferta de educación continua.';
+ document.getElementById('pillF').textContent='Folio: '+o.folio; document.getElementById('pillA').textContent=FID;
+ }catch(err){alert(err)}finally{btn.textContent='Enviar encuesta'; btn.disabled=false;}
+});
+show(1); upd();
+</script></body></html>
